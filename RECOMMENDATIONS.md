@@ -8,4 +8,6 @@ Matthew, here are some recommendations to help you with this project. Just some 
 
 
 I think you have chosen a fairly ambitious project. Depending on how far along you are with Rails, 
-you may want to consider cutting Firebase from your requirements. Good luck, and don't be shy about reaching out with questions.
+you may want to consider cutting Firebase from your requirements. Also, I would recommend focusing on
+only mobile for phase 1. If that goes well, release it for tablets and desktop, later.
+Good luck, and don't be shy about reaching out with questions.
