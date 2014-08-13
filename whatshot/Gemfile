@@ -1,7 +1,13 @@
 source 'https://rubygems.org'
 
+# Twitter Bootstrap Gems
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
+
 # Geocoder Gem
 gem 'geocoder'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
