@@ -19,7 +19,7 @@ class LocationsController < ApplicationController
             coordinates: [location.longitude, location.latitude]
           },
           properties: {
-            # name: location.name,
+            name: location.id,
             address: location.address,
             :'marker-color' => '#00607d',
             :'marker-symbol' => 'circle',
