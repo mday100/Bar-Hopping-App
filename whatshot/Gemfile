@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Sorcery Authentication Gem
+gem 'sorcery'
+
 # Twitter Bootstrap Gems
 gem "therubyracer"
 gem "less-rails"

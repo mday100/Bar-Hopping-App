@@ -2,8 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-# $(document).on "page:change", ->
-  L.mapbox.accessToken = 'pk.eyJ1IjoibWRheTEwMCIsImEiOiJhX3VSTW5ZIn0.tP48iAca3NOQblyHFHmesQ';
+  # L.mapbox.accessToken = 'pk.eyJ1IjoibWRheTEwMCIsImEiOiJhX3VSTW5ZIn0.tP48iAca3NOQblyHFHmesQ';
 
   # initialize the map on the 'map' div 
   # with the given map ID, center, and zoom
