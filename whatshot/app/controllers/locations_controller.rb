@@ -38,6 +38,7 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
+    @locations = Location.all
   end
 
   # GET /locations/new

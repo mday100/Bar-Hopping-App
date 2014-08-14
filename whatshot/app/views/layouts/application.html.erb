@@ -43,7 +43,7 @@
 
         <div id="nav">
         <% if current_user %>
-          Logged in as <%= current_user.email %>.
+          Logged in as <%= current_user.email %>. <br>
           <%= link_to "Edit Profile", edit_user_path(current_user.id) %> ||
           <%= link_to "Logout", :logout, method: :post %>
         <% else %>
@@ -56,7 +56,7 @@
       </div>
 			<div class="span6">
         <!-- TO RENDER MAP -->
-        <div id="map"></div>
+        <!-- <div id="map"></div> -->
 			</div>
 		</div>
 	</div>

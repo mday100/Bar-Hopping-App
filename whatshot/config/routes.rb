@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+
 root :to => 'users#index'
-resources :locations
+
+resources :locations do
+	resources :comments
+end
+
 resources :user_sessions
 resources :users
 

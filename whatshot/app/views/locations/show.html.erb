@@ -22,6 +22,26 @@
 <% end %>
 </ul>
 
+<h3>Comments</h3>
+
+<% @locations.each do |location| %>
+  <%= location.comments %>
+<% end %>
+
+<div id="comments">
+  <%= render :partial => @location.comments %>
+</div>
+
+<%= form_for [@location, Comment.new] do |f| %>
+  <p>
+    <%= f.label :body, "New comment" %> <br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Add comment" %>
+  </p>
+<% end %>
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               locations_path, :class => 'btn'  %>
