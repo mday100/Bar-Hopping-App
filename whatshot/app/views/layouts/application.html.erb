@@ -14,34 +14,18 @@
 </head>
 <body>
 
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="users/index">WhatsHOT!</a>
-        <div class="nav-collapse">
-          <ul class="nav">
-            <li><%= link_to "Browse Products" %></li>
-            <li><%= link_to "Price List" %></li>
-            <li><%= link_to "Contact Us" %></li>
-            <li><%= link_to "Cart" %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand"><a href="#">WhatsHOT!</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Shortcuts</a></li>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Events</a></li>
+        </ul>
+        <!-- content of sidebar -->
+        <%= render partial: "layouts/flash_messages", flash: flash %>
 
-
-	<div class="container">
-		<div class="row">
-			<div class="span6">
-        <%= render partial: "layouts/flash_messages", flash: flash %> 
-
-        <div id="nav">
         <% if current_user %>
           Logged in as <%= current_user.email %>. <br>
           <%= link_to "Edit Profile", edit_user_path(current_user.id) %> ||
@@ -50,16 +34,22 @@
           <%= link_to "Register", new_user_path %> ||
           <%= link_to "Login", :login %>
         <% end %>
-        </div>
 
-        <%= yield %>   
+        <%= yield %> 
+    </div>
+
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+             <!-- content of page -->
+             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+             <div id="map"></div>
+          </div>
+        </div>
       </div>
-			<div class="span6">
-        <!-- TO RENDER MAP -->
-        <!-- <div id="map"></div> -->
-			</div>
-		</div>
-	</div>
+    </div>
+</div>
 
   <%= javascript_include_tag 'https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.js' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
