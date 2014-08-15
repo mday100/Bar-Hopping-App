@@ -14,41 +14,21 @@
 </head>
 <body>
 
-<div id="wrapper">
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand"><a href="#">WhatsHOT!</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Shortcuts</a></li>
-            <li><a href="#">Overview</a></li>
-            <li><a href="#">Events</a></li>
-        </ul>
-        <!-- content of sidebar -->
-        <%= render partial: "layouts/flash_messages", flash: flash %>
+<div id="map"></div>
 
-        <% if current_user %>
-          Logged in as <%= current_user.email %>. <br>
-          <%= link_to "Edit Profile", edit_user_path(current_user.id) %> ||
-          <%= link_to "Logout", :logout, method: :post %>
-        <% else %>
-          <%= link_to "Register", new_user_path %> ||
-          <%= link_to "Login", :login %>
-        <% end %>
+<div class="sidebar">
+  <%= render partial: "layouts/flash_messages", flash: flash %>
 
-        <%= yield %> 
-    </div>
-
-    <div id="page-content-wrapper">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-             <!-- content of page -->
-             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-             <div id="map"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <% if current_user %>
+    Logged in as <%= current_user.email %>. <br>
+    <%= link_to "Edit Profile", edit_user_path(current_user.id) %> ||
+    <%= link_to "Logout", :logout, method: :post %>
+  <% else %>
+    <%= link_to "Register", new_user_path %> ||
+    <%= link_to "Login", :login %>
+  <% end %>
+    
+  <%= yield %> 
 </div>
 
   <%= javascript_include_tag 'https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.js' %>

@@ -6,14 +6,14 @@
 
   # initialize the map on the 'map' div 
   # with the given map ID, center, and zoom
-  map = L.mapbox.map('map', 'mday100.j68cmlo3').setView([40.709, -74.012], 16)
+  map = L.mapbox.map('map', 'mday100.j68cmlo3').setView([40.709, -74.012], 16);
 
   # get JSON object
   # on success, parse it and 
   # hand it over to MapBox for mapping 
   $.ajax
     dataType: 'text'
-    url: 'locations.json'
+    url: '/locations.json'
     success: (data) ->
       geojson = $.parseJSON(data)
       # console.log(geojson)
