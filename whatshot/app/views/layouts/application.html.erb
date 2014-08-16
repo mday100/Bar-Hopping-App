@@ -22,7 +22,8 @@
   <% if current_user %>
     Logged in as <%= current_user.email %>. <br>
     <%= link_to "Edit Profile", edit_user_path(current_user.id) %> ||
-    <%= link_to "Logout", :logout, method: :post %>
+    <%= link_to "Logout", :logout, method: :post %> <br>
+    <%#= current_user.total_votes %>
   <% else %>
     <%= link_to "Register", new_user_path %> ||
     <%= link_to "Login", :login %>

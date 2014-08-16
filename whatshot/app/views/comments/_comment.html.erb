@@ -1,8 +1,16 @@
 <%= div_for comment do %>
 <p>
 	<%= comment.body %> <br>
-	<strong>
-		Posted <%= time_ago_in_words(comment.created_at) %> ago
-	</strong>
-</p>
+	<strong> <%#= comment.user.id %> </strong> posted <br>
+	<%= time_ago_in_words(comment.created_at) %> ago
 <% end %>
+</p>
+
+<p>
+<%= pluralize comment.votes, "vote" %>
+
+<% if current_user && current_user.can_vote_for?(comment) %>
+		| <%= link_to "up", vote_path(comment, value: 1), method: "post" %>
+		| <%= link_to "down", vote_path(comment, value: -1), method: "post" %>
+<% end %>
+</p>
