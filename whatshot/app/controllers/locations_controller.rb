@@ -1,8 +1,9 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_filter :require_login, except: [:index, :show, :foursquare]
+  skip_before_filter :verify_authenticity_token 
+  respond_to :html, :js
 
-  # GET /locations
-  # GET /locations.json
   def index
     if params[:search].present?
       @locations = Location.near(params[:search], 50, :order => "distance")
@@ -21,8 +22,8 @@ class LocationsController < ApplicationController
           properties: {
             name: location.id,
             address: location.address,
-            :'marker-color' => '#00607d',
-            :'marker-symbol' => 'circle',
+            :'marker-color' => '#FF0000',
+            :'marker-symbol' => 'fire-station',
             :'marker-size' => 'medium'
           }
         }
@@ -35,39 +36,21 @@ class LocationsController < ApplicationController
     end
   end
 
-  # GET /locations/1
-  # GET /locations/1.json
   def show
     @location = Location.find(params[:id])
   end
 
-  # GET /locations/new
   def new
     @location = Location.new
   end
 
-  # GET /locations/1/edit
   def edit
   end
 
-  # POST /locations
-  # POST /locations.json
   def create
     @location = Location.new(location_params)
-
-    respond_to do |format|
-      if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
-        format.json { render :show, status: :created, location: @location }
-      else
-        format.html { render :new }
-        format.json { render json: @location.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
-  # PATCH/PUT /locations/1
-  # PATCH/PUT /locations/1.json
   def update
     respond_to do |format|
       if @location.update(location_params)
@@ -80,8 +63,6 @@ class LocationsController < ApplicationController
     end
   end
 
-  # DELETE /locations/1
-  # DELETE /locations/1.json
   def destroy
     @location.destroy
     respond_to do |format|

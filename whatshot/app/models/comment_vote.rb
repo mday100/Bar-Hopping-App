@@ -9,4 +9,5 @@ class CommentVote < ActiveRecord::Base
   def ensure_not_author
   	errors.add :user_id, "is the author of the comment" if comment.user_id == user_id
   end
+
 end

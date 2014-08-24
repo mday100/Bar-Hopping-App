@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140815200654) do
+ActiveRecord::Schema.define(version: 20140819190136) do
 
   create_table "comment_votes", force: true do |t|
     t.integer  "comment_id"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20140815200654) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "ratio"
+    t.boolean  "hot"
   end
 
   add_index "comments", ["location_id"], name: "index_comments_on_location_id"

@@ -1,0 +1,15 @@
+#male input[type="radio"] {
+      display: none;
+      }
+
+#female input[type="radio"] {
+      display: none;
+}
+
+#hot input[type="radio"] {
+      display: none;
+      }
+
+#cold input[type="radio"] {
+      display: none;
+}

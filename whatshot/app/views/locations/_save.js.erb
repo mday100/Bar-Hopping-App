@@ -1,0 +1,7 @@
+<% if @location.save %>
+	window.location.reload();
+	$("#product-modal").modal("hide")
+<% else %>
+	$("#product-modal").html("<%= escape_javascript(render 'layouts/flash_messages') %>")
+	$("#product-modal").modal("hide")
+<% end %>

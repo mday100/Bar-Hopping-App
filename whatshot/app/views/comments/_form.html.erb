@@ -1,0 +1,43 @@
+<div id="product-modal">
+ <ul class="errors"></ul>
+	<%= form_for([@location, Comment.new], remote: true) do |f| %>
+  	<div class="control-group">
+	    <%= f.text_area :body, placeholder: "New Comment" %> <br>
+	
+<h3>How is the Girl to Guy Ratio?</h3>
+		<div id="male">
+			<a>
+			<%= f.radio_button :ratio, 1, class: "male" %>
+			<%= image_tag("sausage.jpg", size: "80") %>
+			<%= f.label :male, 'mostly guys' %>
+			</a>
+		</div>
+
+		<div id="female">
+			<a>
+			<%= f.radio_button :ratio, 0, class: "female" %>
+			<%= image_tag("powerpuff.jpg", size: "80") %>
+			<%= f.label :female, 'mostly girls' %>
+			</a>
+		</div>
+
+<!-- 			<%#= f.radio_button :ratio, 2 %>
+			<%#= f.label :unknown, 'unknown' %>
+			<br /> -->
+
+<h3>How is the Event?</h3>
+		<div id="hot">
+			<%= image_tag("hot.jpg", size: "50") %>
+			<%= f.radio_button :hot, true, class: "hot" %>
+		</div>
+
+		<div id="cold">
+			<%= image_tag("cold.jpg", size: "50") %>
+			<%= f.radio_button :hot, false, class: "cold" %>
+		</div>
+		<br>
+
+	    <%= f.submit class: "btn btn-primary" %>
+  	</div>
+	<% end %>
+</div>

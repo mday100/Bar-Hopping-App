@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-root :to => 'users#index'
+# root :to => 'locations#foursquare'
+root :to => 'locations#index'
 
 resources :locations do
 	resources :comments

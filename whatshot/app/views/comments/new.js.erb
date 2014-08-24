@@ -1,0 +1,37 @@
+function setComment() {
+	$("#male").click(function(){
+		$(this).animate({opacity: 1});
+		$("#female").animate({opacity: 0.2});
+		$('.male').prop("checked", true);
+		// debugger
+	})
+
+	$("#female").click(function(){
+		$(this).animate({opacity: 1});
+		$("#male").animate({opacity: 0.2});
+		$('.female').prop("checked", true);
+		// debugger
+	});
+
+	$("#hot").click(function(){
+		$(this).animate({opacity: 1});
+		$("#cold").animate({opacity: 0.2});
+		$('.hot').prop("checked", true);
+	});
+
+	$("#cold").click(function(){
+		$(this).animate({opacity: 1});
+		$("#hot").animate({opacity: 0.2});
+		$('.cold').prop("checked", true);
+	});
+	// alert("events have been binded!")
+}
+
+
+$("#product-modal").html("<%= escape_javascript(render 'new') %>")
+$("#product-modal").modal("show")
+
+
+setTimeout(function(){setComment()}, 100);
+
+

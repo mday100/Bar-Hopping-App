@@ -2,11 +2,14 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-  # L.mapbox.accessToken = 'pk.eyJ1IjoibWRheTEwMCIsImEiOiJhX3VSTW5ZIn0.tP48iAca3NOQblyHFHmesQ';
+  L.mapbox.accessToken = 'pk.eyJ1IjoibWRheTEwMCIsImEiOiJhX3VSTW5ZIn0.tP48iAca3NOQblyHFHmesQ';
 
   # initialize the map on the 'map' div 
   # with the given map ID, center, and zoom
-  # map = L.mapbox.map('map', 'mday100.j68cmlo3').setView([40.709, -74.012], 16);
+  map = L.mapbox.map('map', 'mday100.j68cmlo3', 
+    { scrollWheelZoom: false, zoomControl: false }).setView([40.709, -74.012], 15);
+
+  new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
   # get JSON object
   # on success, parse it and 
@@ -26,8 +29,8 @@
 
     # create custom popup
     popupContent =  '<div class="popup">' +
-                      '<h3>' + properties.name + '</h3>' +
-                      '<p>' + properties.address + '</p>' +
+                      '<h3>' + properties.address + '</h3>' +
+                      # '<p>' + properties.name + '</p>' +
                     '</div>'
 
     # http://leafletjs.com/reference.html#popup
