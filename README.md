@@ -1,6 +1,6 @@
 ## WhatsHOT!
 
-[![Screenshot](/app/assets/images/screenshot.jpg)](http://whatshot.herokuapp.com)
+[![Screenshot](/whatshot/app/assets/images/screenshot.jpg)](http://whatshot.herokuapp.com)
 
 ## Summary
 
